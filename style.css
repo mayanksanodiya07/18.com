@@ -196,7 +196,7 @@ img {
   flex: 1;
   max-width: 115rem;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: auto;
   row-gap: 3rem;
   align-content: center;
   justify-content: center;
