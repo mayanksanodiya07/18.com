@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0 100px;
+        margin: 0;
+    }
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <!-- <input type="number"> -->
+    <div class="card" id="1">Card</div>
+    <div class="card" id="2">Card</div>
+    <div class="card" id="3">Card</div>
+    <div class="card" id="4">Card</div>
+    <div class="card" id="5">Card</div>
+    <div class="card" id="6">Card</div>
+    <div class="card" id="7">Card</div>
+    <div class="card" id="8">Card</div>
+    <div class="card" id="9">Card</div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entry) => {
+            console.log(entry);
+            entry[0].target.style.backgroundColor = 'red';
+            console.log(entry[0].target);
+        },
+            {
+                threshold: [0, 0.5]
+            })
+
+        cards.forEach((entry)=>{
+            observer.observe(entry);
+
+        })
+        // observer.observe(cards[0]);
+    </script>
+</body>
+
+</html>
